@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/pages/decorator/">
+	<!-- excludes 标签标示不需要进行装饰的 url -->
+	<excludes>
+		<pattern>/images/*</pattern>
+		<!-- <pattern>/pages/login.jsp</pattern> --> <!-- 登录页面 -->
+		<pattern>/login</pattern> <!-- 登录方法 -->
+		<pattern>/user/logout</pattern> <!-- 退出登录 -->
+		<pattern>/**/*.html*</pattern> <!-- 查看项目详情页面 -->
+		<pattern>/look/data/*</pattern> <!-- 查看项目详情首页 -->
+	</excludes>
+	
+	<!-- 以下是定义一些模板 主要包括模板的 name 和 page -->
+	<decorator name="default" page="default.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+</decorators>

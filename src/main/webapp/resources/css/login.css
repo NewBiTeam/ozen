@@ -1,0 +1,31 @@
+.main-login { margin: 70px auto; width: 1000px; }
+.main-login .user {
+	background-color: #F6F6F6;
+	border: 1px solid #E5E5E5;
+	padding: 30px 90px;
+}
+.main-login .data_list .data_list_title {
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 10px;
+    padding: 5px 0px;
+}
+.margin_top10 {
+    margin-top: 10px;
+}
+.main-login .user .post a {
+    color: #fff;
+    background-color: #29A7E1;
+    text-align: center;
+    height: 30px;
+    line-height: 20px;
+    min-height: 30px;
+    margin-left: 0px;
+}
+.forgetpa{
+	float: left;
+    min-height: 1px;
+    margin-left: 20px;
+}
