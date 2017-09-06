@@ -1,5 +1,7 @@
 package org.ozen.backmgr.controller;
 
-public class LoginController {
+import org.ozen.core.base.BaseController;
+
+public class LoginController extends BaseController{
 
 }
