@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController extends BaseController {
 	
-	@Autowired
-	private LoginService loginService;
+//	@Autowired
+//	private LoginService loginService;
 
 	/**
 	 * @param request
