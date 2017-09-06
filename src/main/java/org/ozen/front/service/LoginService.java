@@ -1,0 +1,5 @@
+package org.ozen.front.service;
+
+public interface LoginService {
+
+}

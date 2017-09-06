@@ -1,4 +1,4 @@
-package org.ozen.web.controller;
+package org.ozen.core.base;
 
 import java.io.IOException;
 import java.util.HashMap;
