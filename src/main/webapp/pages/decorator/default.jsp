@@ -5,18 +5,17 @@
 <html lang="en" class="no-js">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><decorator:title default="X-实验室 | XYZ'S L" /></title>
+<title><decorator:title default="Ozen" /></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 <meta content="" name="description" />
-<meta content="赵星宇" name="author" />
 <meta name="MobileOptimized" content="320">
 
 <link href="${base}/resources/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${base}/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="${base}/resources/css/base.css" rel="stylesheet">
 <script src="${base}/resources/js/jquery.1.11.3.min.js"></script> 
-<link rel="shortcut icon" href="${base}/resources/images/z.ico" />
+<link rel="shortcut icon" href="${base}/resources/images/o.ico" />
 
 </head>
 <body>

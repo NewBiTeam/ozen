@@ -13,8 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MoodController extends BaseController {
 
-	@Autowired
-	private MoodService moodService;
+//	@Autowired
+//	private MoodService moodService;
 
 	@RequestMapping("/mood")
 	public ModelAndView moodList(Model model, HttpServletRequest request) {
