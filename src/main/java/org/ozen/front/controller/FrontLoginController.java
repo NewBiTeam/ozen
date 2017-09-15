@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.ozen.core.base.BaseController;
 import org.ozen.core.util.Constants;
-import org.ozen.core.util.Md5Utils;
 import org.ozen.front.entity.TbUser;
 import org.ozen.front.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class FrontLoginController extends BaseController {
 	
-	@Autowired
-	private LoginService loginService;
+//	@Autowired
+//	private LoginService loginService;
 
 	/**
 	 * @param request
@@ -30,14 +29,14 @@ public class FrontLoginController extends BaseController {
 		TbUser user = new TbUser();
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
-		user.setUsername(name);
-		user.setPassword(Md5Utils.string2MD5(password));
-		TbUser use = loginService.selectLogin(user);
-		if (null != use) {
-			request.getSession().setAttribute(Constants.SESSION_LOGIN_USER, use);
-			logger.debug("用户登录成功：{}", user.getUsername());
-			statusCode = SC_OK;
-		}
+//		user.setLoginName(name);
+//		user.setPassWord(Md5Utils.string2MD5(password));
+//		TbUser use = loginService.login(user);
+//		if (null != use) {
+//			request.getSession().setAttribute(Constants.SESSION_LOGIN_USER, use);
+//			logger.debug("用户登录成功：{}", user.getName());
+//			statusCode = SC_OK;
+//		}
 		setJsonResult(statusCode, response);
 	}
 

@@ -42,7 +42,7 @@ $("#login").click(function(){
                 	var le = msg;
                 	
                      if(msg == 'success'){
-                    	 window.location.href = "${base}/pages/about/about.jsp";
+                    	 window.location.href = "${base}/index";
                      }else{
                     	 alert("请输入正确的用户名或密码！");
                      }
