@@ -3,154 +3,176 @@ package org.ozen.front.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbUser implements Serializable{
-	 private Long userId;
+public class TbUser implements Serializable {
+	private Long userId;
 
-	    private String nickName;
+	private String nickName;
 
-	    private Boolean sex;
+	private Boolean sex;
 
-	    private String region;
+	private String region;
 
-	    private String avatar;
+	private String avatar;
 
-	    private String constellation;
+	private String constellation;
 
-	    private String usign;
+	private String usign;
 
-	    private Integer integral;
+	private Integer integral;
 
-	    private Integer surplusIntegral;
+	private Integer surplusIntegral;
 
-	    private String email;
+	private String email;
 
-	    private String telphone;
+	private String telphone;
 
-	    private Boolean privacy;
+	private Boolean privacy;
 
-	    private Boolean status;
+	private Boolean status;
 
-	    private Date createTime;
+	private Date createTime;
 
-	    private Date loginTime;
+	private Date loginTime;
 
-	    public Long getUserId() {
-	        return userId;
-	    }
+	private String username;
 
-	    public void setUserId(Long userId) {
-	        this.userId = userId;
-	    }
+	private String password;
 
-	    public String getNickName() {
-	        return nickName;
-	    }
+	public Long getUserId() {
+		return userId;
+	}
 
-	    public void setNickName(String nickName) {
-	        this.nickName = nickName == null ? null : nickName.trim();
-	    }
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 
-	    public Boolean getSex() {
-	        return sex;
-	    }
+	public String getNickName() {
+		return nickName;
+	}
 
-	    public void setSex(Boolean sex) {
-	        this.sex = sex;
-	    }
+	public void setNickName(String nickName) {
+		this.nickName = nickName == null ? null : nickName.trim();
+	}
 
-	    public String getRegion() {
-	        return region;
-	    }
+	public Boolean getSex() {
+		return sex;
+	}
 
-	    public void setRegion(String region) {
-	        this.region = region == null ? null : region.trim();
-	    }
+	public void setSex(Boolean sex) {
+		this.sex = sex;
+	}
 
-	    public String getAvatar() {
-	        return avatar;
-	    }
+	public String getRegion() {
+		return region;
+	}
 
-	    public void setAvatar(String avatar) {
-	        this.avatar = avatar == null ? null : avatar.trim();
-	    }
+	public void setRegion(String region) {
+		this.region = region == null ? null : region.trim();
+	}
 
-	    public String getConstellation() {
-	        return constellation;
-	    }
+	public String getAvatar() {
+		return avatar;
+	}
 
-	    public void setConstellation(String constellation) {
-	        this.constellation = constellation == null ? null : constellation.trim();
-	    }
+	public void setAvatar(String avatar) {
+		this.avatar = avatar == null ? null : avatar.trim();
+	}
 
-	    public String getUsign() {
-	        return usign;
-	    }
+	public String getConstellation() {
+		return constellation;
+	}
 
-	    public void setUsign(String usign) {
-	        this.usign = usign == null ? null : usign.trim();
-	    }
+	public void setConstellation(String constellation) {
+		this.constellation = constellation == null ? null : constellation.trim();
+	}
 
-	    public Integer getIntegral() {
-	        return integral;
-	    }
+	public String getUsign() {
+		return usign;
+	}
 
-	    public void setIntegral(Integer integral) {
-	        this.integral = integral;
-	    }
+	public void setUsign(String usign) {
+		this.usign = usign == null ? null : usign.trim();
+	}
 
-	    public Integer getSurplusIntegral() {
-	        return surplusIntegral;
-	    }
+	public Integer getIntegral() {
+		return integral;
+	}
 
-	    public void setSurplusIntegral(Integer surplusIntegral) {
-	        this.surplusIntegral = surplusIntegral;
-	    }
+	public void setIntegral(Integer integral) {
+		this.integral = integral;
+	}
 
-	    public String getEmail() {
-	        return email;
-	    }
+	public Integer getSurplusIntegral() {
+		return surplusIntegral;
+	}
 
-	    public void setEmail(String email) {
-	        this.email = email == null ? null : email.trim();
-	    }
+	public void setSurplusIntegral(Integer surplusIntegral) {
+		this.surplusIntegral = surplusIntegral;
+	}
 
-	    public String getTelphone() {
-	        return telphone;
-	    }
+	public String getEmail() {
+		return email;
+	}
 
-	    public void setTelphone(String telphone) {
-	        this.telphone = telphone == null ? null : telphone.trim();
-	    }
+	public void setEmail(String email) {
+		this.email = email == null ? null : email.trim();
+	}
 
-	    public Boolean getPrivacy() {
-	        return privacy;
-	    }
+	public String getTelphone() {
+		return telphone;
+	}
 
-	    public void setPrivacy(Boolean privacy) {
-	        this.privacy = privacy;
-	    }
+	public void setTelphone(String telphone) {
+		this.telphone = telphone == null ? null : telphone.trim();
+	}
 
-	    public Boolean getStatus() {
-	        return status;
-	    }
+	public Boolean getPrivacy() {
+		return privacy;
+	}
 
-	    public void setStatus(Boolean status) {
-	        this.status = status;
-	    }
+	public void setPrivacy(Boolean privacy) {
+		this.privacy = privacy;
+	}
 
-	    public Date getCreateTime() {
-	        return createTime;
-	    }
+	public Boolean getStatus() {
+		return status;
+	}
 
-	    public void setCreateTime(Date createTime) {
-	        this.createTime = createTime;
-	    }
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
 
-	    public Date getLoginTime() {
-	        return loginTime;
-	    }
+	public Date getCreateTime() {
+		return createTime;
+	}
 
-	    public void setLoginTime(Date loginTime) {
-	        this.loginTime = loginTime;
-	    }
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getLoginTime() {
+		return loginTime;
+	}
+
+	public void setLoginTime(Date loginTime) {
+		this.loginTime = loginTime;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 }
