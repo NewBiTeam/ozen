@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <link href="${base}/resources/css/about.css" rel="stylesheet">
 
 <article class="aboutcon">
@@ -31,23 +32,34 @@
 	<aside class="right">
 		<div class="about_c">
 			<p>
-				网名：<span>DanceSmile</span> | 即步非烟
+				账号：<span>${user.username}</span>&emsp; 可用积分：<span>${user.surplusIntegral}</span>
 			</p>
-			<p>姓名：xxxx</p>
-			<p>生日：1987-10-30</p>
-			<p>籍贯：四川省—成都市</p>
-			<p>现居：天津市—滨海新区</p>
-			<p>职业：网站设计、网站制作</p>
-			<p>喜欢的书：《红与黑》《红楼梦》</p>
-			<p>喜欢的音乐：《burning》《just one last dance》《相思引》</p>
+			<p>姓名：${user.nickName}</p>
+			<c:set var="salary" scope="session" value="${user.sex}" />
+			<c:if test="${salary == 1}">
+			<p>性别：<c:out value="男"/></p>
+			</c:if>
+			<c:if test="${salary == 2}">
+			<p>性别：<c:out value="女"/></p>
+			</c:if>
+			<c:if test="${salary == 3}">
+			<p>性别：<c:out value="保密"/></p>
+			</c:if>
+			<p>星座：${user.constellation}</p>
+			<p>现居：${user.region}</p>
+			<p>个性签名：${user.usign}</p>
 			<a target="_blank"
+				href="//shang.qq.com/wpa/qunwpa?idkey=63c973a520f89f5a6e5f58e5a5a62ef5b75162fb09a77f4434a05bcb054c0d32"><img
+				border="0" src="//pub.idqqimg.com/wpa/images/group.png"
+				alt="Ozen的学习交流群" title="Ozen的学习交流群"></a>
+			<!-- <a target="_blank"
 				href="http://wp.qq.com/wpa/qunwpa?idkey=d4d4a26952d46d564ee5bf7782743a70d5a8c405f4f9a33a60b0eec380743c64">
 				<img src="http://pub.idqqimg.com/wpa/images/group.png"
 				alt="杨青个人博客网站" title="杨青个人博客网站">
 			</a> <a target="_blank"
 				href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E"><img
 				src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_22.png"
-				alt="杨青个人博客网站"></a>
+				alt="杨青个人博客网站"></a> -->
 		</div>
 	</aside>
 </article>

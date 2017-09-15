@@ -8,7 +8,7 @@ public class TbUser implements Serializable {
 
 	private String nickName;
 
-	private Boolean sex;
+	private Integer sex;
 
 	private String region;
 
@@ -54,11 +54,11 @@ public class TbUser implements Serializable {
 		this.nickName = nickName == null ? null : nickName.trim();
 	}
 
-	public Boolean getSex() {
+	public Integer getSex() {
 		return sex;
 	}
 
-	public void setSex(Boolean sex) {
+	public void setSex(Integer sex) {
 		this.sex = sex;
 	}
 

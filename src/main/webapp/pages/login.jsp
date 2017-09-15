@@ -5,7 +5,7 @@
 
 <div class="main-login">
 	<div class="data_list user">
-		<div class="data_list_title">欢迎登录最代码</div>
+		<div class="data_list_title">欢迎登录Ozen</div>
 			<div class="margin_top10">
 				<span class="error">密码不能为空</span>
 			</div>
@@ -33,20 +33,20 @@ $("#login").click(function(){
 			var password = $("#password").val();
 			$.ajax({
 				type : "POST",  
-                url : "${base}/login",  
+                url : "${base}/login",
+                dataType : 'json',
                 data : {
                 	username : username,
                 	password : password
                 },
                 success : function(msg) {
-                	var le = msg;
-                	
-                     if(msg == 'success'){
-                    	 window.location.href = "${base}/pages/about/about.jsp";
-                     }else{
-                    	 alert("请输入正确的用户名或密码！");
-                     }
+                	localStorage.clear();
+                	location.href = "${base}/pages/about/about.jsp";
+                },
+                error:function(){
+                	alert("登录失败，账号或密码错误");
                 }
+                
 			})
 		})
 </script>
