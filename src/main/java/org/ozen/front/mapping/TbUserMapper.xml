@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ozen.front.dao.TbUserMapper">
+	<resultMap id="BaseResultMap" type="org.ozen.front.entity.TbUser">
+		<id column="user_id" property="userId" jdbcType="BIGINT" />
+		<result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="BIT" />
+		<result column="region" property="region" jdbcType="VARCHAR" />
+		<result column="avatar" property="avatar" jdbcType="VARCHAR" />
+		<result column="constellation" property="constellation"
+			jdbcType="VARCHAR" />
+		<result column="usign" property="usign" jdbcType="VARCHAR" />
+		<result column="integral" property="integral" jdbcType="INTEGER" />
+		<result column="surplus_integral" property="surplusIntegral"
+			jdbcType="INTEGER" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="telphone" property="telphone" jdbcType="VARCHAR" />
+		<result column="privacy" property="privacy" jdbcType="BIT" />
+		<result column="status" property="status" jdbcType="BIT" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="login_time" property="loginTime" jdbcType="TIMESTAMP" />
+		<result column="username" property="username" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		user_id, nick_name, sex, region, avatar, constellation, usign, integral,
+		surplus_integral,
+		email, telphone, privacy, status, create_time, login_time,username,password
+	</sql>
+
+	<select id="login" resultMap="BaseResultMap" parameterType="org.ozen.front.entity.TbUser">
+		select * from tb_user
+		<where>
+			<if test="nickName != null">
+				and nick_name = #{nickName,jdbcType=VARCHAR}
+			</if>
+			<if test="sex != null">
+				and sex = #{sex,jdbcType=BIT}
+			</if>
+			<if test="region != null">
+				and region = #{region,jdbcType=VARCHAR}
+			</if>
+			<if test="avatar != null">
+				and avatar = #{avatar,jdbcType=VARCHAR}
+			</if>
+			<if test="constellation != null">
+				and constellation = #{constellation,jdbcType=VARCHAR}
+			</if>
+			<if test="usign != null">
+				and usign = #{usign,jdbcType=VARCHAR}
+			</if>
+			<if test="integral != null">
+				and integral = #{integral,jdbcType=INTEGER}
+			</if>
+			<if test="surplusIntegral != null">
+				and surplus_integral = #{surplusIntegral,jdbcType=INTEGER}
+			</if>
+			<if test="email != null">
+				and email = #{email,jdbcType=VARCHAR}
+			</if>
+			<if test="telphone != null">
+				and telphone = #{telphone,jdbcType=VARCHAR}
+			</if>
+			<if test="privacy != null">
+				and privacy = #{privacy,jdbcType=BIT}
+			</if>
+			<if test="status != null">
+				and status = #{status,jdbcType=BIT}
+			</if>
+			<if test="createTime != null">
+				and create_time = #{createTime,jdbcType=TIMESTAMP}
+			</if>
+			<if test="loginTime != null">
+				and login_time = #{loginTime,jdbcType=TIMESTAMP}
+			</if>
+			<if test="username != null">
+				and username = #{username,jdbcType=VARCHAR}
+			</if>
+			<if test="password != null">
+				and password = #{password,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from tb_user
+		where user_id = #{userId,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from tb_user
+		where user_id = #{userId,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="org.ozen.front.entity.TbUser">
+		insert into tb_user (user_id, nick_name, sex,
+		region, avatar, constellation,
+		usign, integral, surplus_integral,
+		email, telphone, privacy,
+		status, create_time, login_time
+		)
+		values (#{userId,jdbcType=BIGINT}, #{nickName,jdbcType=VARCHAR},
+		#{sex,jdbcType=BIT},
+		#{region,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{constellation,jdbcType=VARCHAR},
+		#{usign,jdbcType=VARCHAR}, #{integral,jdbcType=INTEGER},
+		#{surplusIntegral,jdbcType=INTEGER},
+		#{email,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, #{privacy,jdbcType=BIT},
+		#{status,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP},
+		#{loginTime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="org.ozen.front.entity.TbUser">
+		insert into tb_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="nickName != null">
+				nick_name,
+			</if>
+			<if test="sex != null">
+				sex,
+			</if>
+			<if test="region != null">
+				region,
+			</if>
+			<if test="avatar != null">
+				avatar,
+			</if>
+			<if test="constellation != null">
+				constellation,
+			</if>
+			<if test="usign != null">
+				usign,
+			</if>
+			<if test="integral != null">
+				integral,
+			</if>
+			<if test="surplusIntegral != null">
+				surplus_integral,
+			</if>
+			<if test="email != null">
+				email,
+			</if>
+			<if test="telphone != null">
+				telphone,
+			</if>
+			<if test="privacy != null">
+				privacy,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="loginTime != null">
+				login_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				#{userId,jdbcType=BIGINT},
+			</if>
+			<if test="nickName != null">
+				#{nickName,jdbcType=VARCHAR},
+			</if>
+			<if test="sex != null">
+				#{sex,jdbcType=BIT},
+			</if>
+			<if test="region != null">
+				#{region,jdbcType=VARCHAR},
+			</if>
+			<if test="avatar != null">
+				#{avatar,jdbcType=VARCHAR},
+			</if>
+			<if test="constellation != null">
+				#{constellation,jdbcType=VARCHAR},
+			</if>
+			<if test="usign != null">
+				#{usign,jdbcType=VARCHAR},
+			</if>
+			<if test="integral != null">
+				#{integral,jdbcType=INTEGER},
+			</if>
+			<if test="surplusIntegral != null">
+				#{surplusIntegral,jdbcType=INTEGER},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="telphone != null">
+				#{telphone,jdbcType=VARCHAR},
+			</if>
+			<if test="privacy != null">
+				#{privacy,jdbcType=BIT},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=BIT},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="loginTime != null">
+				#{loginTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="org.ozen.front.entity.TbUser">
+		update tb_user
+		<set>
+			<if test="nickName != null">
+				nick_name = #{nickName,jdbcType=VARCHAR},
+			</if>
+			<if test="sex != null">
+				sex = #{sex,jdbcType=BIT},
+			</if>
+			<if test="region != null">
+				region = #{region,jdbcType=VARCHAR},
+			</if>
+			<if test="avatar != null">
+				avatar = #{avatar,jdbcType=VARCHAR},
+			</if>
+			<if test="constellation != null">
+				constellation = #{constellation,jdbcType=VARCHAR},
+			</if>
+			<if test="usign != null">
+				usign = #{usign,jdbcType=VARCHAR},
+			</if>
+			<if test="integral != null">
+				integral = #{integral,jdbcType=INTEGER},
+			</if>
+			<if test="surplusIntegral != null">
+				surplus_integral = #{surplusIntegral,jdbcType=INTEGER},
+			</if>
+			<if test="email != null">
+				email = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="telphone != null">
+				telphone = #{telphone,jdbcType=VARCHAR},
+			</if>
+			<if test="privacy != null">
+				privacy = #{privacy,jdbcType=BIT},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=BIT},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="loginTime != null">
+				login_time = #{loginTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where user_id = #{userId,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="org.ozen.front.entity.TbUser">
+		update tb_user
+		set nick_name = #{nickName,jdbcType=VARCHAR},
+		sex = #{sex,jdbcType=BIT},
+		region = #{region,jdbcType=VARCHAR},
+		avatar = #{avatar,jdbcType=VARCHAR},
+		constellation = #{constellation,jdbcType=VARCHAR},
+		usign = #{usign,jdbcType=VARCHAR},
+		integral = #{integral,jdbcType=INTEGER},
+		surplus_integral = #{surplusIntegral,jdbcType=INTEGER},
+		email = #{email,jdbcType=VARCHAR},
+		telphone = #{telphone,jdbcType=VARCHAR},
+		privacy = #{privacy,jdbcType=BIT},
+		status = #{status,jdbcType=BIT},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		login_time = #{loginTime,jdbcType=TIMESTAMP}
+		where user_id = #{userId,jdbcType=BIGINT}
+	</update>
+</mapper>
