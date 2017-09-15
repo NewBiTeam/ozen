@@ -36,7 +36,14 @@
 			</p>
 			<p>姓名：${user.nickName}</p>
 			<c:set var="salary" scope="session" value="${user.sex}" />
-			<c:if test="${salary == 1}">
+			<p>性别：
+				<c:choose>
+					<c:when test="${salary == 1}">男</c:when>
+       				<c:when test="${salary == 2}">女</c:when>	
+					<c:when test="${salary == 3}">保密</c:when>
+				</c:choose>
+			</p>
+			<%-- 	<c:if test="${salary == 1}">
 			<p>性别：<c:out value="男"/></p>
 			</c:if>
 			<c:if test="${salary == 2}">
@@ -44,7 +51,7 @@
 			</c:if>
 			<c:if test="${salary == 3}">
 			<p>性别：<c:out value="保密"/></p>
-			</c:if>
+			</c:if> --%>
 			<p>星座：${user.constellation}</p>
 			<p>现居：${user.region}</p>
 			<p>个性签名：${user.usign}</p>

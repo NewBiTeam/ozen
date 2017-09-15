@@ -41,7 +41,7 @@ $("#login").click(function(){
                 },
                 success : function(msg) {
                 	localStorage.clear();
-                	location.href = "${base}/pages/about/about.jsp";
+                	location.href = "index.jsp";
                 },
                 error:function(){
                 	alert("登录失败，账号或密码错误");
