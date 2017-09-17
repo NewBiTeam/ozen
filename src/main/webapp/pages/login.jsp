@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 
 <link href="${base}/resources/css/login.css" rel="stylesheet">
-
-<div class="main-login">
+<object style="border:0px;margin-top: 30px; type="text/x-scriptlet" data="../pages/dateTime.html" width="100%" height=500px></object>
+ <div class="main-login">
 	<div class="data_list user">
 		<div class="data_list_title">欢迎登录Ozen</div>
 			<div class="margin_top10">
@@ -26,7 +26,6 @@
 		<br clear="all">
 	</div>
 </div>
-
 <script type="text/javascript">
 $("#login").click(function(){
 			var username = $("#account").val();
@@ -48,5 +47,5 @@ $("#login").click(function(){
                 }
                 
 			})
-		})
+		});
 </script>
