@@ -1,0 +1,91 @@
+[INFO][2017-09-19 14:52:09][org.springframework.web.context.ContextLoader]:285 - Root WebApplicationContext: initialization started
+[INFO][2017-09-19 14:52:09][org.springframework.web.context.support.XmlWebApplicationContext]:513 - Refreshing Root WebApplicationContext: startup date [Tue Sep 19 14:52:09 CST 2017]; root of context hierarchy
+[INFO][2017-09-19 14:52:09][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]:316 - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][2017-09-19 14:52:10][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]:172 - Loading properties file from class path resource [jdbc.properties]
+[INFO][2017-09-19 14:52:10][org.springframework.web.context.ContextLoader]:325 - Root WebApplicationContext: initialization completed in 1298 ms
+[INFO][2017-09-19 14:52:10][org.ozen.core.listener.Listener]:43 - 项目启动 ： 添加基本静态数据到ServletContext
+[INFO][2017-09-19 14:52:10][org.ozen.core.listener.Listener]:44 - ------即将开启：/ozen
+[INFO][2017-09-19 14:52:10][org.springframework.web.servlet.DispatcherServlet]:479 - FrameworkServlet 'SpringMVC': initialization started
+[INFO][2017-09-19 14:52:10][org.springframework.web.context.support.XmlWebApplicationContext]:513 - Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Sep 19 14:52:10 CST 2017]; parent: Root WebApplicationContext
+[INFO][2017-09-19 14:52:10][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]:316 - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/receiveFile],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.ozen.core.file.FileController.receiveFile(org.springframework.web.multipart.MultipartHttpServletRequest,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/about],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.ozen.front.controller.AboutController.index(org.springframework.ui.Model)
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.ozen.front.entity.TbUser org.ozen.front.controller.FrontLoginController.login(org.ozen.front.entity.TbUser,javax.servlet.http.HttpSession)
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.ozen.front.controller.FrontLoginController.logout(javax.servlet.http.HttpServletRequest)
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.ozen.front.controller.IndexController.index(org.springframework.ui.Model,javax.servlet.http.HttpServletRequest)
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/mood],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.ozen.front.controller.MoodController.moodList(org.springframework.ui.Model,javax.servlet.http.HttpServletRequest)
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/assets/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][2017-09-19 14:52:11][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/pages/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][2017-09-19 14:52:12][org.springframework.web.servlet.DispatcherServlet]:498 - FrameworkServlet 'SpringMVC': initialization completed in 1290 ms
+[INFO][2017-09-19 15:03:16][org.springframework.web.context.ContextLoader]:285 - Root WebApplicationContext: initialization started
+[INFO][2017-09-19 15:03:16][org.springframework.web.context.support.XmlWebApplicationContext]:513 - Refreshing Root WebApplicationContext: startup date [Tue Sep 19 15:03:16 CST 2017]; root of context hierarchy
+[INFO][2017-09-19 15:03:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]:316 - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][2017-09-19 15:03:18][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]:172 - Loading properties file from class path resource [jdbc.properties]
+[INFO][2017-09-19 15:03:18][org.springframework.web.context.ContextLoader]:325 - Root WebApplicationContext: initialization completed in 1942 ms
+[INFO][2017-09-19 15:03:18][org.ozen.core.listener.Listener]:43 - 项目启动 ： 添加基本静态数据到ServletContext
+[INFO][2017-09-19 15:03:18][org.ozen.core.listener.Listener]:44 - ------即将开启：/ozen
+[INFO][2017-09-19 15:03:18][org.springframework.web.servlet.DispatcherServlet]:479 - FrameworkServlet 'SpringMVC': initialization started
+[INFO][2017-09-19 15:03:18][org.springframework.web.context.support.XmlWebApplicationContext]:513 - Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Sep 19 15:03:18 CST 2017]; parent: Root WebApplicationContext
+[INFO][2017-09-19 15:03:18][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]:316 - Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO][2017-09-19 15:03:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/receiveFile],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.ozen.core.file.FileController.receiveFile(org.springframework.web.multipart.MultipartHttpServletRequest,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO][2017-09-19 15:03:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/about],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.ozen.front.controller.AboutController.index(org.springframework.ui.Model)
+[INFO][2017-09-19 15:03:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.ozen.front.entity.TbUser org.ozen.front.controller.FrontLoginController.login(org.ozen.front.entity.TbUser,javax.servlet.http.HttpSession)
+[INFO][2017-09-19 15:03:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.ozen.front.controller.FrontLoginController.logout(javax.servlet.http.HttpServletRequest)
+[INFO][2017-09-19 15:03:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.ozen.front.controller.IndexController.index(org.springframework.ui.Model,javax.servlet.http.HttpServletRequest)
+[INFO][2017-09-19 15:03:19][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]:182 - Mapped "{[/mood],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.ozen.front.controller.MoodController.moodList(org.springframework.ui.Model,javax.servlet.http.HttpServletRequest)
+[INFO][2017-09-19 15:03:20][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+[INFO][2017-09-19 15:03:20][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[INFO][2017-09-19 15:03:20][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/assets/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+[INFO][2017-09-19 15:03:20][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]:315 - Mapped URL path [/pages/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+[INFO][2017-09-19 15:03:20][org.springframework.web.servlet.DispatcherServlet]:498 - FrameworkServlet 'SpringMVC': initialization completed in 1608 ms
+[INFO][2017-09-19 15:03:32][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/
+[INFO][2017-09-19 15:03:34][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：2573毫秒
+[INFO][2017-09-19 15:03:34][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/pages/login.jsp
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:24 - 新建的session的ID为：ED6065CE92452B780FBD83B6FAA8BFE3
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：945毫秒
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/bootstrap/css/bootstrap.css
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/bootstrap/css/bootstrap.min.css
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/css/base.css
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/js/jquery.1.11.3.min.js
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/css/login.css
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：49毫秒
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：49毫秒
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：54毫秒
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：49毫秒
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：55毫秒
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/images/ozen-logo.png
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/css/images/backtop.png
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/pages/dateTime.html
+[INFO][2017-09-19 15:03:35][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:03:36][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：195毫秒
+[INFO][2017-09-19 15:03:36][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/images/o.ico
+[INFO][2017-09-19 15:03:36][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:03:41][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/login
+[INFO][2017-09-19 15:03:41][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：132毫秒
+[INFO][2017-09-19 15:03:50][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/about
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：293毫秒
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/css/about.css
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/images/r_line.jpg
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/css/images/backtop.png
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/images/aboutphoto.jpg
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：6毫秒
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/blog
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：7毫秒
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/images/404error.png
+[INFO][2017-09-19 15:03:51][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:03:58][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/blog
+[INFO][2017-09-19 15:03:58][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：8毫秒
+[INFO][2017-09-19 15:03:58][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/images/404error.png
+[INFO][2017-09-19 15:03:58][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：7毫秒
+[INFO][2017-09-19 15:04:04][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/
+[INFO][2017-09-19 15:04:04][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：1毫秒
+[INFO][2017-09-19 15:04:04][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/pages/login.jsp
+[INFO][2017-09-19 15:04:04][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：4毫秒
+[INFO][2017-09-19 15:04:04][org.ozen.core.listener.Listener]:55 - IP地址为：0:0:0:0:0:0:0:1请求/ozen/resources/css/images/backtop.png
+[INFO][2017-09-19 15:04:04][org.ozen.core.listener.Listener]:61 - 0:0:0:0:0:0:0:1请求结束，耗时：5毫秒
