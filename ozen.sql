@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-09-15 17:23:55
+Date: 2017-09-19 13:45:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,12 +32,12 @@ CREATE TABLE `date` (
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_bizcode`;
 CREATE TABLE `sys_bizcode` (
-  `id` bigint(4) NOT NULL AUTO_INCREMENT,
-  `text` varchar(30) NOT NULL,
-  `code` varchar(50) NOT NULL,
-  `type` varchar(10) NOT NULL DEFAULT '',
-  `type_name` varchar(30) NOT NULL DEFAULT '',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态。默认1=正常',
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `text` varchar(30) DEFAULT NULL,
+  `code` varchar(50) DEFAULT NULL,
+  `type` varchar(10) DEFAULT '',
+  `type_name` varchar(30) DEFAULT '',
+  `status` int(1) DEFAULT '1' COMMENT '状态。默认1=正常',
   `remark` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统字段表';
@@ -56,7 +56,7 @@ CREATE TABLE `sys_operation_record` (
   `role_name` varchar(50) DEFAULT NULL COMMENT '角色名称',
   `operation_type` varchar(100) DEFAULT NULL COMMENT '操作类型',
   `remark` text COMMENT '备注',
-  `create_time` datetime DEFAULT NULL COMMENT '操作时间',
+  `create_time` timestamp NULL DEFAULT NULL COMMENT '操作时间',
   `ip` varchar(50) DEFAULT NULL COMMENT 'ip地址',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统操作日志';
@@ -70,9 +70,9 @@ CREATE TABLE `sys_operation_record` (
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_bill_category`;
 CREATE TABLE `tb_bill_category` (
-  `cate_id` bigint(11) NOT NULL AUTO_INCREMENT,
-  `cate_name` varchar(20) NOT NULL COMMENT '类别名称',
-  `cate_type` tinyint(1) NOT NULL COMMENT '分类1：消费 2：收入',
+  `cate_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cate_name` varchar(20) DEFAULT NULL COMMENT '类别名称',
+  `cate_type` int(1) DEFAULT NULL COMMENT '分类1：消费 2：收入',
   PRIMARY KEY (`cate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -86,18 +86,38 @@ CREATE TABLE `tb_bill_category` (
 DROP TABLE IF EXISTS `tb_bill_record`;
 CREATE TABLE `tb_bill_record` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL COMMENT '用户id',
-  `describe` varchar(50) DEFAULT NULL COMMENT '描述',
-  `money` int(10) NOT NULL DEFAULT '0' COMMENT '金额',
-  `cate_id` tinyint(1) DEFAULT NULL COMMENT '类别ID',
-  `time` datetime NOT NULL COMMENT '记账时间',
-  `type` tinyint(1) NOT NULL COMMENT '类型0：消费记录 1：收入记录',
-  `status` tinyint(1) DEFAULT NULL COMMENT '状态0：他人不可见 1：他人可见',
+  `user_id` int(20) DEFAULT NULL COMMENT '用户id',
+  `describes` varchar(50) DEFAULT NULL COMMENT '描述',
+  `money` double DEFAULT '0' COMMENT '金额',
+  `cate_id` int(1) DEFAULT NULL COMMENT '类别ID',
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '记账时间',
+  `type` int(1) DEFAULT NULL COMMENT '类型0：消费记录 1：收入记录',
+  `status` int(1) DEFAULT '1' COMMENT '状态0：他人不可见 1：他人可见',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tb_bill_record
+-- ----------------------------
+INSERT INTO `tb_bill_record` VALUES ('1', '2', '22', '123', '2', '2017-09-18 16:21:52', '1', '2');
+INSERT INTO `tb_bill_record` VALUES ('10', '2', '2', '2.1', null, '2017-09-19 10:24:02', null, null);
+
+-- ----------------------------
+-- Table structure for tb_statementofbalanceofpayments
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_statementofbalanceofpayments`;
+CREATE TABLE `tb_statementofbalanceofpayments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL COMMENT '用户ID',
+  `balances` double DEFAULT '0' COMMENT '余额',
+  `budget` double DEFAULT '0' COMMENT '预算',
+  `creat_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of tb_bill_record
+-- Records of tb_statementofbalanceofpayments
 -- ----------------------------
 
 -- ----------------------------
@@ -105,25 +125,25 @@ CREATE TABLE `tb_bill_record` (
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_user`;
 CREATE TABLE `tb_user` (
-  `user_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-  `nick_name` varchar(100) NOT NULL DEFAULT '' COMMENT '用户昵称',
-  `sex` tinyint(1) NOT NULL COMMENT '性别1：男 2：女 3：保密',
+  `user_id` int(20) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `nick_name` varchar(100) DEFAULT '' COMMENT '用户昵称',
+  `sex` int(1) DEFAULT NULL COMMENT '性别1：男 2：女 3：保密',
   `region` varchar(15) DEFAULT '' COMMENT '地区城市',
   `avatar` varchar(255) DEFAULT '' COMMENT '头像',
   `constellation` varchar(30) DEFAULT '' COMMENT '星座',
   `usign` varchar(5000) DEFAULT '' COMMENT '个性签名',
-  `integral` int(11) NOT NULL DEFAULT '0' COMMENT '累计总积分',
-  `surplus_integral` int(11) NOT NULL DEFAULT '0' COMMENT '可用积分',
+  `integral` int(11) DEFAULT '0' COMMENT '累计总积分',
+  `surplus_integral` int(11) DEFAULT '0' COMMENT '可用积分',
   `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
   `telphone` varchar(15) DEFAULT '' COMMENT '手机号',
-  `privacy` tinyint(1) NOT NULL DEFAULT '1' COMMENT '隐私设置0：公开 1：不公开 2：仅向我的好友公开',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '用户状态1：正常',
+  `privacy` int(1) DEFAULT '1' COMMENT '隐私设置0：公开 1：不公开 2：仅向我的好友公开',
+  `status` int(1) DEFAULT '1' COMMENT '用户状态1：正常',
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `login_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最近登录时间',
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of tb_user
@@ -137,9 +157,9 @@ INSERT INTO `tb_user` VALUES ('2', '李四', '1', '上海', '1', '巨蟹座', '�
 DROP TABLE IF EXISTS `tb_user_advise`;
 CREATE TABLE `tb_user_advise` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL COMMENT '用户ID',
+  `user_id` int(20) DEFAULT NULL COMMENT '用户ID',
   `content` text COMMENT '吐槽内容',
-  `create_time` datetime DEFAULT NULL,
+  `create_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户吐槽表';
 
@@ -153,12 +173,12 @@ CREATE TABLE `tb_user_advise` (
 DROP TABLE IF EXISTS `tb_user_comment`;
 CREATE TABLE `tb_user_comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(11) NOT NULL COMMENT '用户ID',
-  `mood_id` int(11) NOT NULL COMMENT '用户心情ID',
-  `content` text NOT NULL COMMENT '评论内容',
-  `create_time` datetime NOT NULL,
-  `update_time` datetime NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态1：正常',
+  `user_id` int(11) DEFAULT NULL COMMENT '用户ID',
+  `mood_id` int(11) DEFAULT NULL COMMENT '用户心情ID',
+  `content` text COMMENT '评论内容',
+  `create_time` timestamp NULL DEFAULT NULL,
+  `update_time` timestamp NULL DEFAULT NULL,
+  `status` int(1) DEFAULT '1' COMMENT '状态1：正常',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户评论表';
 
@@ -172,11 +192,11 @@ CREATE TABLE `tb_user_comment` (
 DROP TABLE IF EXISTS `tb_user_like`;
 CREATE TABLE `tb_user_like` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL COMMENT '用户ID',
-  `mood_id` int(20) NOT NULL COMMENT '心情ID',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态0：取消点赞 1：已点赞',
-  `create_time` datetime NOT NULL,
-  `update_time` datetime DEFAULT NULL,
+  `user_id` int(20) DEFAULT NULL COMMENT '用户ID',
+  `mood_id` int(20) DEFAULT NULL COMMENT '心情ID',
+  `status` int(1) DEFAULT '1' COMMENT '状态0：取消点赞 1：已点赞',
+  `create_time` timestamp NULL DEFAULT NULL,
+  `update_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id` (`user_id`,`mood_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户点赞动态记录表';
@@ -191,12 +211,12 @@ CREATE TABLE `tb_user_like` (
 DROP TABLE IF EXISTS `tb_user_mood`;
 CREATE TABLE `tb_user_mood` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(11) NOT NULL COMMENT '用户id',
-  `content` varchar(255) NOT NULL COMMENT '内容',
+  `user_id` int(11) DEFAULT NULL COMMENT '用户id',
+  `content` varchar(255) DEFAULT NULL COMMENT '内容',
   `img` varchar(255) DEFAULT NULL COMMENT '配图',
-  `comments` tinyint(10) NOT NULL DEFAULT '0' COMMENT '评论数',
-  `likes` tinyint(10) NOT NULL DEFAULT '0' COMMENT '点赞数',
-  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `comments` int(10) DEFAULT '0' COMMENT '评论数',
+  `likes` int(10) DEFAULT '0' COMMENT '点赞数',
+  `create_time` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -210,9 +230,9 @@ CREATE TABLE `tb_user_mood` (
 DROP TABLE IF EXISTS `tb_user_relation`;
 CREATE TABLE `tb_user_relation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(10) NOT NULL COMMENT '用户id',
-  `follow_user_id` bigint(10) NOT NULL COMMENT '关注的用户id',
-  `re_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态1：互粉',
+  `user_id` int(10) DEFAULT NULL COMMENT '用户id',
+  `follow_user_id` int(10) DEFAULT NULL COMMENT '关注的用户id',
+  `re_status` int(1) DEFAULT '0' COMMENT '状态1：互粉',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
