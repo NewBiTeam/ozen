@@ -1,24 +1,23 @@
 package org.ozen.front.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class TbBillRecord implements Serializable{
+public class TbBillRecord {
     private Integer id;
 
-    private Long userId;
+    private Integer userId;
 
-    private String describe;
+    private String describes;
 
-    private Integer money;
+    private Double money;
 
-    private Boolean cateId;
+    private Integer cateId;
 
     private Date time;
 
-    private Boolean type;
+    private Integer type;
 
-    private Boolean status;
+    private Integer status;
 
     public Integer getId() {
         return id;
@@ -28,35 +27,35 @@ public class TbBillRecord implements Serializable{
         this.id = id;
     }
 
-    public Long getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDescribes() {
+        return describes;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe == null ? null : describe.trim();
+    public void setDescribes(String describes) {
+        this.describes = describes == null ? null : describes.trim();
     }
 
-    public Integer getMoney() {
+    public Double getMoney() {
         return money;
     }
 
-    public void setMoney(Integer money) {
+    public void setMoney(Double money) {
         this.money = money;
     }
 
-    public Boolean getCateId() {
+    public Integer getCateId() {
         return cateId;
     }
 
-    public void setCateId(Boolean cateId) {
+    public void setCateId(Integer cateId) {
         this.cateId = cateId;
     }
 
@@ -68,19 +67,19 @@ public class TbBillRecord implements Serializable{
         this.time = time;
     }
 
-    public Boolean getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

@@ -53,6 +53,11 @@ public class FrontLoginController extends BaseController {
 		}
 		return user;
 	}
+	
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public @ResponseBody void login(TbUser tbUser){
+		loginService.add(tbUser);
+	}
 
 	/**
 	 * @param request

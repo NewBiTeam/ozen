@@ -1,19 +1,17 @@
 package org.ozen.front.entity;
 
-import java.io.Serializable;
-
-public class TbBillCategory implements Serializable{
-    private Long cateId;
+public class TbBillCategory {
+    private Integer cateId;
 
     private String cateName;
 
-    private Boolean cateType;
+    private Integer cateType;
 
-    public Long getCateId() {
+    public Integer getCateId() {
         return cateId;
     }
 
-    public void setCateId(Long cateId) {
+    public void setCateId(Integer cateId) {
         this.cateId = cateId;
     }
 
@@ -25,11 +23,11 @@ public class TbBillCategory implements Serializable{
         this.cateName = cateName == null ? null : cateName.trim();
     }
 
-    public Boolean getCateType() {
+    public Integer getCateType() {
         return cateType;
     }
 
-    public void setCateType(Boolean cateType) {
+    public void setCateType(Integer cateType) {
         this.cateType = cateType;
     }
 }

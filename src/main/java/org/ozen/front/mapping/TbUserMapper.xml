@@ -87,18 +87,18 @@
     delete from tb_user
     where user_id = #{userId,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="org.ozen.front.entity.TbUser" >
-    insert into tb_user (user_id, nick_name, sex, 
+  <insert id="add" parameterType="org.ozen.front.entity.TbUser" >
+    insert into tb_user (nick_name, sex, 
       region, avatar, constellation, 
       usign, integral, surplus_integral, 
       email, telphone, privacy, 
-      status, create_time, login_time
+      status
       )
-    values (#{userId,jdbcType=BIGINT}, #{nickName,jdbcType=VARCHAR}, #{sex,jdbcType=BIT}, 
+    values ( #{nickName,jdbcType=VARCHAR}, #{sex,jdbcType=BIT}, 
       #{region,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{constellation,jdbcType=VARCHAR}, 
       #{usign,jdbcType=VARCHAR}, #{integral,jdbcType=INTEGER}, #{surplusIntegral,jdbcType=INTEGER}, 
       #{email,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, #{privacy,jdbcType=BIT}, 
-      #{status,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, #{loginTime,jdbcType=TIMESTAMP}
+      #{status,jdbcType=BIT}
       )
   </insert>
   <insert id="insertSelective" parameterType="org.ozen.front.entity.TbUser" >

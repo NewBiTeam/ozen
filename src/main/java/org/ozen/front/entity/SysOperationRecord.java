@@ -1,9 +1,8 @@
 package org.ozen.front.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class SysOperationRecord implements Serializable{
+public class SysOperationRecord {
     private Integer id;
 
     private String userName;

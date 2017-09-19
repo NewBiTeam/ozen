@@ -17,4 +17,11 @@ public class LoginServiceImpl implements LoginService{
 		return userDao.login(user);
 	}
 
+	@Override
+	public void add(TbUser user) {
+		// TODO Auto-generated method stub
+		userDao.add(user);
+		
+	}
+
 }

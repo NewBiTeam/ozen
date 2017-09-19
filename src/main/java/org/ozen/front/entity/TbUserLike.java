@@ -1,16 +1,15 @@
 package org.ozen.front.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class TbUserLike implements Serializable{
+public class TbUserLike {
     private Integer id;
 
-    private Long userId;
+    private Integer userId;
 
     private Integer moodId;
 
-    private Boolean status;
+    private Integer status;
 
     private Date createTime;
 
@@ -24,11 +23,11 @@ public class TbUserLike implements Serializable{
         this.id = id;
     }
 
-    public Long getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -40,11 +39,11 @@ public class TbUserLike implements Serializable{
         this.moodId = moodId;
     }
 
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

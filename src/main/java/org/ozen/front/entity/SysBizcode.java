@@ -1,9 +1,7 @@
 package org.ozen.front.entity;
 
-import java.io.Serializable;
-
-public class SysBizcode implements Serializable{
-    private Long id;
+public class SysBizcode {
+    private Integer id;
 
     private String text;
 
@@ -13,15 +11,15 @@ public class SysBizcode implements Serializable{
 
     private String typeName;
 
-    private Boolean status;
+    private Integer status;
 
     private String remark;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -57,11 +55,11 @@ public class SysBizcode implements Serializable{
         this.typeName = typeName == null ? null : typeName.trim();
     }
 
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

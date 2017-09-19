@@ -22,6 +22,7 @@
 					checked="checked"><label for="rememberme">记住我</label>
 			</div>
 				<button class="btn btn-default btn-xs" id="login">登录</button>
+				<button class="btn btn-default btn-xs" id="zhuce">注册</button>
 			<a class="forgetpa" href="/user/find.htm">忘记密码？</a>
 		<br clear="all">
 	</div>

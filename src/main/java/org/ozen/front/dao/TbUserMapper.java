@@ -5,4 +5,6 @@ import org.ozen.front.entity.TbUser;
 public interface TbUserMapper {
 
 	TbUser login(TbUser user);
+	
+	void add(TbUser user);
 }

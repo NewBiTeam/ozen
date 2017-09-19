@@ -1,12 +1,11 @@
 package org.ozen.front.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class TbUserAdvise implements Serializable{
+public class TbUserAdvise {
     private Integer id;
 
-    private Long userId;
+    private Integer userId;
 
     private Date createTime;
 
@@ -20,11 +19,11 @@ public class TbUserAdvise implements Serializable{
         this.id = id;
     }
 
-    public Long getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
