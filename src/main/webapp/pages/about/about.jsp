@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link href="${base}/resources/css/about.css" rel="stylesheet">
-
+<script type="text/javascript"
+	src="${base}/resources/js/jquery.1.11.3.min.js"></script>
+<script type="text/javascript" src="${base}/resources/js/external.js"></script>
 <article class="aboutcon">
 	<h1 class="t_nav">
 		<span>像“草根”一样，紧贴着地面，低调的存在，冬去春来，枯荣无恙。</span><a href="" class="n1">网站首页</a><a
 			href="/" class="n2">关于我</a>
 	</h1>
 	<div class="about left">
-		<h2>Just about me</h2>
+		<div id="sy"> </div>
 		<ul>
 			<p>09年入行，从业已经有三四年。从搬砖一样的生活方式换成了现在有“单”而居的日子。当然这个单不是单身的单，跟我的职业相比，爱情脱单并不是问题！虽然极尽苛刻的征婚条件但也远不及客户千奇百怪的要求。告别了朝九晚五，躲过了风吹日晒，虽然不再有阶梯式的工资，但是偶尔可以给自己放放假，挽着老公，一起轻装旅行。</p>
 			<p>
@@ -30,28 +32,26 @@
 		<p>程 序：PHP 帝国CMS7.0</p>
 	</div>
 	<aside class="right">
+		<a href="#" class="btn btn-sm btn-primary" id="shenghuo"><span
+			class="glyphicon glyphicon-credit-card"></span> 生活记账</a> <a href="#"
+			class="btn btn-primary btn-success" id="shouru"><span
+			class="glyphicon glyphicon-credit-card"></span> 收入</a> <a href="#"
+			class="btn btn-primary btn-danger" id="zhichu"><span
+			class="glyphicon glyphicon-credit-card"></span> 支出</a>
 		<div class="about_c">
 			<p>
 				账号：<span>${user.username}</span>&emsp; 可用积分：<span>${user.surplusIntegral}</span>
 			</p>
 			<p>姓名：${user.nickName}</p>
 			<c:set var="salary" scope="session" value="${user.sex}" />
-			<p>性别：
+			<p>
+				性别：
 				<c:choose>
 					<c:when test="${salary == 1}">男</c:when>
-       				<c:when test="${salary == 2}">女</c:when>	
+					<c:when test="${salary == 2}">女</c:when>
 					<c:when test="${salary == 3}">保密</c:when>
 				</c:choose>
 			</p>
-			<%-- 	<c:if test="${salary == 1}">
-			<p>性别：<c:out value="男"/></p>
-			</c:if>
-			<c:if test="${salary == 2}">
-			<p>性别：<c:out value="女"/></p>
-			</c:if>
-			<c:if test="${salary == 3}">
-			<p>性别：<c:out value="保密"/></p>
-			</c:if> --%>
 			<p>星座：${user.constellation}</p>
 			<p>现居：${user.region}</p>
 			<p>个性签名：${user.usign}</p>
