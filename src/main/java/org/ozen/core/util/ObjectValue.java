@@ -20,8 +20,8 @@ public class ObjectValue {
 					return (T) Float.valueOf(obj.toString().trim());
 				}
 				if (clz.equals(Date.class)) {
-					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-					//yyyy-MM-dd HH:mm:ss
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+					//yyyy-MM-dd
 					Date day = df.parse(obj.toString().trim());					
 					return (T) day;
 				}

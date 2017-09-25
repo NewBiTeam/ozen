@@ -27,7 +27,7 @@ public class TbBillRecordServiceImpl extends BaseServiceImpl<TbBillRecord> imple
 		ReMessage reMessage = new ReMessage();
 		TbBillRecord tbRecord = getEntity(map);
 		billDao.add(tbRecord);
-		reMessage.setMessage("chengg");
+		reMessage.setMessage("true");
 		return reMessage;
 		}
 

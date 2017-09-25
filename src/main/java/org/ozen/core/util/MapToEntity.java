@@ -57,7 +57,7 @@ public class MapToEntity<T> {
  		for (Field field : fields) {
 			for (Map.Entry entry : map.entrySet()) {
 				String key = (String) entry.getKey();
-				String value = (String) entry.getValue();
+				String value = (String) entry.getValue().toString();
 				logger.debug(" key :"+key+"    field.getname(): "+field.getName());
 				if(value!=null)
 				if (field.getName().equals(key)&&!value.equals("")) {

@@ -26,11 +26,11 @@
   </delete>
  <insert id="add" parameterType="org.ozen.front.entity.TbBillRecord" >
 	insert into tb_bill_record (user_id,
-	describes,money,cate_id,type,status)
+	describes,money,cate_id,type,status,time)
 	values (#{userId,jdbcType=INTEGER},
 	#{describes,jdbcType=VARCHAR},#{money,jdbcType=INTEGER},
 	#{cateId,jdbcType=INTEGER},#{type,jdbcType=INTEGER},
-	#{status,jdbcType=INTEGER})
+	#{status,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="org.ozen.front.entity.TbBillRecord" >
     insert into tb_bill_record
