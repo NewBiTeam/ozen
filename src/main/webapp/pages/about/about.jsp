@@ -5,6 +5,12 @@
 <script type="text/javascript"
 	src="${base}/resources/js/jquery.1.11.3.min.js"></script>
 <script type="text/javascript" src="${base}/resources/js/external.js"></script>
+<script>
+$(function(){
+	var m = ${message};
+	console.log(m);
+});
+</script>
 <article class="aboutcon">
 	<h1 class="t_nav">
 		<span>像“草根”一样，紧贴着地面，低调的存在，冬去春来，枯荣无恙。</span><a href="" class="n1">网站首页</a><a
