@@ -16,7 +16,7 @@
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler/>
 	<mvc:resources mapping="/resources/**" location="/resources/" />
-	<mvc:resources mapping="/assets/**" location="/assets/" />
+	<!--<mvc:resources mapping="/assets/**" location="/assets/" />-->
 	<mvc:resources mapping="/pages/**" location="/pages/" />
 
 	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->
